@@ -9,9 +9,11 @@ department_id int,location_id int,salary decimal(10,2));
 alter table Employees add column email varchar(255);
 alter table Employees modify designation varchar(255);
 alter table Employees drop column Age;
+alter table  employees rename column hire_date to date_of_joining;
 
-rename table Departments to Departmnent_info;
-rename table Location to Loactions;
+
+rename table Departments to Departmnents_info;
+rename table Location to Locations;
 
 TRUNCATE TABLE Employees;
 
@@ -48,5 +50,5 @@ CREATE TABLE Employees (
         REFERENCES Departments(department_id),
 
     FOREIGN KEY (location_id)
-        REFERENCES Location(location_id)
+        REFERENCES Location(location_id),salary decimal(10,2)
 );
